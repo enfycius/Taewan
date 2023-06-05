@@ -86,12 +86,20 @@ public class MainActivity extends AppCompatActivity {
 
         EditText editText = (EditText) findViewById(R.id.urlEdit);
 
+        Button clearBtn = (Button) findViewById(R.id.clearBtn);
         Button button = (Button) findViewById(R.id.submit);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 new DownloadImageTask().execute(editText.getText().toString());
+            }
+        });
+
+        clearBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editText.setText("");
             }
         });
 
